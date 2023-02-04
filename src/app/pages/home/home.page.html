@@ -4,6 +4,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
+  <div id="container" style="max-width: 600px;">
+    <ion-item>
+      <ion-label position="floating"> Enter Name </ion-label>
+        <ion-input type="text" [(ngModel)]="personName" placeholder="Enter name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Enter email</ion-label>
+      <ion-input type="text" [(ngModel)]="personEmail" placeholder="Enter email"></ion-input>
+    </ion-item>
+
+    <ion-button size="small" color="tertiary" (click)="setStorage()">Set storage data</ion-button>
+    <ion-button size="small" color="tertiary" (click)="getStorage()">Get storage data</ion-button>
+    <ion-button size="small" color="tertiary" (click)="updateStorage()">Update storage data</ion-button>
+    <ion-button size="small" color="tertiary" (click)="deleteFromStorage()">delete Storage</ion-button>
+    <ion-button size="small" color="tertiary" (click)="clearStorage()">clear storage</ion-button>
+
+    <ion-item>
+      Get LocalStorage theme: {{ themeName }}
+    </ion-item>
+    <ion-item>
+      Get LocalStorage person : {{ person?.name }} : {{ person?.email }}
+    </ion-item>
+  
+  </div>
 </ion-content>
