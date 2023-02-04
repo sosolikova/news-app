@@ -12,12 +12,12 @@ export class NewsapiService {
 
   constructor(private http:HttpClient) { }
 
-  getTopHeadlines(
+  getTopCountryHeadlines(
     country: string, 
     category: string
-    ):Observable<NewsResponse> {
+  ):Observable<NewsResponse> {
     return this.http.get<NewsResponse>(
-      this.topHeadlinesPath+
+      this.topHeadlinesPath +
       `?country=${country}&category=${category}&pageSize=10&apiKey=${environment.apiKey}`)
   }
 }
