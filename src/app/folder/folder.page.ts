@@ -24,7 +24,7 @@ export class FolderPage implements OnInit {
   }
   getTopHeadlines() {
     this.newsApiService
-    .getTopCountryHeadlines('in', this.folder)
+    .getTopCountryHeadlines('cz', this.folder)
     .pipe(map((res: any) => res.articles))
     .subscribe((news) => (this.newsList = news));
 
